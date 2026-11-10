@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events – eduGaming.ch</title>
+  <meta name="description" content="Workshops, Kurse und Veranstaltungen rund um Games im Unterricht.">
+  <script>try{var t=localStorage.getItem("eg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- HEADER (auf allen Seiten identisch) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="eduGaming.ch – Startseite">
+        <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        <span>eduGaming<span class="logo__dot">.</span>ch</span>
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list" id="nav-list">
+          <li><a class="nav__link" href="events.html" aria-current="page">Events</a></li>
+          <li><a class="nav__link" href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Hell-/Dunkelmodus umschalten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brotkrumen"><a href="index.html">Start</a> / Events</nav>
+        <h1>Events</h1>
+        <p>Weiterbildungen, Workshops, Module und Veranstaltungen rund um Games im Unterricht – an der PH Zürich und darüber hinaus.</p>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="container">
+        <!-- Hintergrundbild je Kachel im .ev-tile__bg setzen (Platzhalter in img/events/ durch Fotos ersetzen) -->
+        <div class="ev-grid">
+
+          <!-- HAUPTEVENT -->
+          <article class="ev-tile ev-tile--main reveal" id="event-game-festival">
+            <div class="ev-tile__bg" style="background-image:url('img/events/festival.jpg')" aria-hidden="true"></div>
+            <div class="ev-tile__top">
+              <span class="ev-badge">★ Hauptevent</span>
+              <span class="ev-countdown" data-countdown="2027-06-14T00:00:00+02:00"></span>
+            </div>
+            <div class="ev-tile__body">
+              <div class="ev-bigdate"><b>14.–24.</b><span>Juni 2027</span></div>
+              <h2 class="ev-tile__title">Game Festival</h2>
+              <div class="event__info">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mo, 14.06. – Do, 24.06.2027</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Kulturplatz, PH Zürich</span>
+                <span class="tag">Festival</span>
+              </div>
+              <p class="ev-tile__text">Games von Schüler:innen, Lehrpersonen und Studierenden zum Ausprobieren, Inputs rund um Games im Unterricht und eine Abschlussveranstaltung mit tollen Preisen.</p>
+              <button class="btn btn--light" type="button" data-event-open>Weitere Informationen</button>
+              <!-- Inhalt des Popups -->
+              <template class="ev-more">
+                <p>Während des Game Festivals verwandelt sich der Kulturplatz der PH Zürich in eine Spielausstellung: An vier Stationen können Besucherinnen und Besucher Games auswählen und selbst spielen, die von Schüler:innen, Lehrpersonen und Studierenden entwickelt wurden.</p>
+                <p>Über die ganze Festivaldauer verteilt gibt es verschiedene Inputs rund um Games im Unterricht. Zum Abschluss stellen Lehrpersonen und Schüler:innen ihre Spiele vor – und es gibt tolle Preise zu gewinnen.</p>
+                <dl class="ev-facts">
+                <dt>Zeitraum</dt><dd>Montag, 14.06. – Donnerstag, 24.06.2027</dd>
+                <dt>Ort</dt><dd>Kulturplatz, PH Zürich</dd>
+                <dt>Ausstellung</dt><dd>4 Spielstationen mit Games von Schüler:innen, Lehrpersonen und Studierenden</dd>
+                <dt>Programm</dt><dd>Inputs während des Festivals, Abschlussveranstaltung mit Preisverleihung (Daten folgen)</dd>
+                <dt>Anmeldung</dt><dd>Weitere Informationen und Anmeldung ab Januar 2027</dd>
+                </dl>
+              </template>
+            </div>
+          </article>
+
+          <article class="ev-tile reveal" id="event-wpm-game-design">
+            <div class="ev-tile__bg" style="background-image:url('img/events/wpm-game-design.jpg')" aria-hidden="true"></div>
+            <div class="ev-tile__top">
+              <div class="event__date"><div><b>13</b><small>Jan 2027</small></div></div>
+              <span class="tag">Modul</span>
+            </div>
+            <div class="ev-tile__body">
+              <h3 class="ev-tile__title">Wahlpflichtmodul «Game Design»</h3>
+              <div class="event__info">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>13.01. – 16.06.2027</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>PH Zürich, Leutschentower</span>
+              </div>
+              <button class="btn btn--light" type="button" data-event-open>Weitere Informationen</button>
+              <!-- Inhalt des Popups -->
+              <template class="ev-more">
+                <p>Im Zentrum steht die Entwicklung eines eigenen Games mit professionellen Tools. Dabei werden vertiefte Kenntnisse in Informatik und Medienproduktion vermittelt – ebenso agile Methoden und Formen der Zusammenarbeit, wie sie in der Informatikbranche üblich sind.</p>
+                <p>Die Teilnehmenden lernen den kompletten Prozess der Spielentwicklung kennen, entwickeln im Team ein eigenes Game und übertragen ihre Erfahrungen in ein schulhausspezifisches Umsetzungsprojekt. Das Modul ist Teil des CAS Pädagogischer ICT-Support (PICTS), kann aber auch einzeln besucht werden.</p>
+                <dl class="ev-facts">
+                <dt>Zeitraum</dt><dd>13.01. – 16.06.2027</dd>
+                <dt>Ort</dt><dd>Campus PH Zürich und Leutschentower PH Zürich</dd>
+                <dt>Für wen</dt><dd>PICTS (in Ausbildung oder zertifiziert), Lehrpersonen Medien und Informatik, Anbietende von Projektwochen und Begabungsförderung Game Design</dd>
+                <dt>Umfang</dt><dd>3 ECTS-Punkte, 90 Stunden Workload (davon 52 Stunden Präsenz)</dd>
+                </dl>
+                <h3 class="ev-subhead">Inhalte</h3>
+                <ul class="checklist">
+                  <li>Grundlagen Game Design: Spielmechaniken, Motivation, User Interface und User Experience – Möglichkeiten und Grenzen von Game Design in der Schule</li>
+                  <li>Agile Zusammenarbeit: Iterationen, Project Board, Pair-Programming, User-Stories, Prototypen und Testen, Design Thinking</li>
+                  <li>Planung und Entwicklung eines eigenen Spiels mit GameMaker Studio 2 im Team</li>
+                  <li>Gamekultur und Wirkung von Games (Medienbildung zum Thema Games)</li>
+                </ul>
+                <h3 class="ev-subhead">Kurstage (jeweils 8.30–16.30 Uhr)</h3>
+                <dl class="ev-facts">
+                <dt>Januar</dt><dd>Mi, 13.01. und Do, 14.01.2027</dd>
+                <dt>März</dt><dd>Di, 16.03. und Mi, 17.03.2027</dd>
+                <dt>Juni</dt><dd>Fr, 04.06. und Sa, 05.06.2027</dd>
+                <dt>Abschluss</dt><dd>Mi, 16.06.2027, 14.00–17.30 Uhr</dd>
+                </dl>
+                <div class="ev-actions">
+                  <a class="btn btn--primary" href="https://phzh.ch/weiterbildung/alle-weiterbildungen/weiterbildungsanlass/?anlassId=144643534" target="_blank" rel="noopener">Weitere Informationen und Anmeldung</a>
+                </div>
+              </template>
+            </div>
+          </article>
+
+          <article class="ev-tile reveal" id="event-global-game-jam">
+            <div class="ev-tile__bg" style="background-image:url('img/events/global-game-jam.jpg')" aria-hidden="true"></div>
+            <div class="ev-tile__top">
+              <div class="event__date"><div><b>29</b><small>Jan 2027</small></div></div>
+              <span class="tag">Game Jam</span>
+            </div>
+            <div class="ev-tile__body">
+              <h3 class="ev-tile__title">Global Game Jam 2027 an der PH Zürich</h3>
+              <div class="event__info">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>29.–31.01.2027</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Leutschentower Oerlikon</span>
+              </div>
+              <button class="btn btn--light" type="button" data-event-open>Weitere Informationen</button>
+              <!-- Inhalt des Popups -->
+              <template class="ev-more">
+                <p>Zum ersten Mal ist die PH Zürich Standort der Global Game Jam. In 48 Stunden entwickeln Lehrpersonen und Interessierte aus dem Bildungsbereich Spiele, die sich am Thema der GGJ27 orientieren und zugleich ein pädagogisches Ziel verfolgen – digital oder als Brettspiel.</p>
+                <p>Die entstandenen Spiele können vom 14. bis 24. Juni 2027 am Game Festival auf dem Kulturplatz der PH Zürich ausgestellt werden. Der Game Jam findet im Rahmen des Forschungsprojekts <a href="https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" target="_blank" rel="noopener">«Ludic Culture Hub»</a> statt.</p>
+                <dl class="ev-facts">
+                <dt>Beginn</dt><dd>Freitag, 29.01.2027, 17.00 Uhr</dd>
+                <dt>Ende</dt><dd>Sonntag, 31.01.2027, 18.00 Uhr</dd>
+                <dt>Ort</dt><dd>Leutschentower Oerlikon<br>Leutschenbachstrasse 52, 8050 Zürich</dd>
+                <dt>Für wen</dt><dd>Personen mit Hintergrund im Bildungsbereich, ab 18 Jahren</dd>
+                <dt>Plätze</dt><dd>max. 10 (erste Durchführung)</dd>
+                <dt>Kosten</dt><dd>keine</dd>
+                </dl>
+                <h3 class="ev-subhead">Ablauf (provisorisch)</h3>
+                <dl class="ev-facts">
+                <dt>Fr 17.00</dt><dd>Ankunft und Kennenlernen</dd>
+                <dt>Fr 18.00</dt><dd>Keynote</dd>
+                <dt>Fr 18.30</dt><dd>Pitches und Gruppenfindung, dann Start</dd>
+                <dt>Sa 11.00</dt><dd>Projektseiten auf der Website eröffnet</dd>
+                <dt>Sa 13.00</dt><dd>Zwischenstände präsentieren und austauschen</dd>
+                <dt>So 16.00</dt><dd>Spiele hochladen</dd>
+                <dt>So 17.00</dt><dd>Abschlusspräsentation und Spiele spielen</dd>
+                <dt>So 18.00</dt><dd>Ende</dd>
+                </dl>
+                <div class="ev-actions">
+                  <a class="btn btn--primary" href="https://forms.cloud.microsoft/e/pSUspf0NLP" target="_blank" rel="noopener">Jetzt anmelden</a>
+                  <a class="btn btn--ghost" href="https://globalgamejam.org/jam-sites/2027/ggj27-ph-zurich" target="_blank" rel="noopener">Jam-Site auf globalgamejam.org</a>
+                </div>
+              </template>
+            </div>
+          </article>
+
+          <article class="ev-tile reveal" id="event-lets-play">
+            <div class="ev-tile__bg" style="background-image:url('img/events/lets-play.jpg')" aria-hidden="true"></div>
+            <div class="ev-tile__top">
+              <div class="event__date"><div><b>07</b><small>Apr 2027</small></div></div>
+              <span class="tag">Workshop</span>
+            </div>
+            <div class="ev-tile__body">
+              <h3 class="ev-tile__title">Workshop «LET'S PLAY» – (Digitale) Spiele für den Unterricht kennenlernen</h3>
+              <div class="event__info">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>14.00–17.30 Uhr</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Campus PH Zürich</span>
+              </div>
+              <button class="btn btn--light" type="button" data-event-open>Weitere Informationen</button>
+              <!-- Inhalt des Popups -->
+              <template class="ev-more">
+                <p>Gemeinsam das Potenzial von ausgewählten (digitalen) Spielen für den Unterricht entdecken: Im Workshop werden Spiele getestet, bei denen ein pädagogisches Potenzial vermutet wird. Zwei Inputs zur Einbettung von Games im Unterricht – Edugaming und Gamifizierung des Unterrichts – umrahmen den Anlass.</p>
+                <dl class="ev-facts">
+                <dt>Datum</dt><dd>Mittwoch, 07.04.2027</dd>
+                <dt>Zeit</dt><dd>14.00–17.30 Uhr</dd>
+                <dt>Ort</dt><dd>Campus PH Zürich</dd>
+                <dt>Für wen</dt><dd>Interessierte Lehrpersonen aller Zyklen, PICTS</dd>
+                <dt>Arbeitsweise</dt><dd>Postenarbeit (Spiele testen), Austausch in Gruppen, Inputs</dd>
+                </dl>
+                <h3 class="ev-subhead">Die Teilnehmenden …</h3>
+                <ul class="checklist">
+                  <li>kennen Spiele, die sie im Unterricht einsetzen können,</li>
+                  <li>kennen Kriterien für erfolgreiche pädagogische digitale Spiele,</li>
+                  <li>wissen, wo sie sich über neue, pädagogisch sinnvolle Spiele informieren können.</li>
+                </ul>
+                <div class="ev-actions">
+                  <a class="btn btn--primary" href="https://phzh.ch/weiterbildung/alle-weiterbildungen/weiterbildungsanlass/?anlassId=144723865" target="_blank" rel="noopener">Weitere Informationen und Anmeldung</a>
+                </div>
+              </template>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Event für eure Schule?</h2>
+            <p>Wir bieten auch schulinterne Weiterbildungen zu Games und Game Design an. Platzhaltertext – Angebot und Konditionen folgen.</p>
+          </div>
+          <a class="btn btn--primary" href="mailto:digitalebildung@phzh.ch">Anfrage senden</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup für «Weitere Informationen» (wird per JS aus der jeweiligen Kachel befüllt) -->
+    <dialog class="ev-modal" data-event-modal aria-labelledby="ev-modal-title">
+      <div class="ev-modal__head" data-modal-bg>
+        <button class="ev-modal__close" type="button" data-modal-close aria-label="Schliessen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <div class="ev-modal__meta" data-modal-meta></div>
+        <h2 class="ev-modal__title" id="ev-modal-title" data-modal-title></h2>
+      </div>
+      <div class="ev-modal__body" data-modal-body></div>
+    </dialog>
+  </main>
+
+  <!-- FOOTER (auf allen Seiten identisch) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+            <span>eduGaming<span class="logo__dot">.</span>ch</span>
+          </a>
+          <p style="margin-top:14px;max-width:34ch;color:color-mix(in srgb,var(--paper) 70%,transparent)">Games und Game Design im Bildungskontext – ein Angebot der Pädagogischen Hochschule Zürich.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Lernbereiche</h4>
+          <ul>
+            <li><a href="unterrichtsmaterialien.html#ueber">ÜBER Games lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#design">Mit GAME DESIGN lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#gamen">Beim GAMEN lernen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <address>
+            PH Zürich<br>Zentrum Medienbildung und Informatik<br>Lagerstrasse 2, 8090 Zürich<br>
+            <a href="tel:+41433056434">+41 43 305 64 34</a><br>
+            <a href="mailto:adrian.degonda@phzh.ch">adrian.degonda@phzh.ch</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> PH Zürich</span>
+        <span><a href="achievements.html">Achievements</a> · <a href="mailto:adrian.degonda@phzh.ch">Kontakt</a> · <a href="impressum.html">Impressum</a></span>
+        <a href="#main">Press <span class="kbd">▲</span> to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/achievements.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

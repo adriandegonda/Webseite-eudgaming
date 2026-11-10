@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unterrichtsmaterialien – eduGaming.ch</title>
+  <meta name="description" content="Unterrichtsmaterialien zu Games und Game Design, Zyklus 2 und 3.">
+  <script>try{var t=localStorage.getItem("eg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- HEADER (auf allen Seiten identisch) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="eduGaming.ch – Startseite">
+        <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        <span>eduGaming<span class="logo__dot">.</span>ch</span>
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list" id="nav-list">
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="unterrichtsmaterialien.html" aria-current="page">Unterrichtsmaterialien</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Hell-/Dunkelmodus umschalten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brotkrumen"><a href="index.html">Start</a> / Unterrichtsmaterialien</nav>
+        <h1>Unterrichtsmaterialien</h1>
+        <p>Materialien zu Games und Game Design für den Unterricht ab der 5. Primarklasse bis zur 3. Sek – gegliedert in drei Lernbereiche.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="filters" data-filters role="group" aria-label="Materialien filtern" style="margin-top:32px;align-items:center">
+        <button class="chip" type="button" data-filter="alle" aria-pressed="true">Alle</button>
+        <button class="chip" type="button" data-filter="ueber" aria-pressed="false">ÜBER Games lernen</button>
+        <button class="chip" type="button" data-filter="design" aria-pressed="false">Mit GAME DESIGN lernen</button>
+        <button class="chip" type="button" data-filter="gamen" aria-pressed="false">Beim GAMEN lernen</button>
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="visually-hidden">Materialien durchsuchen</span>
+          <input type="search" placeholder="Suchen, z.&nbsp;B. Scratch" data-search>
+        </label>
+      </div>
+
+      <section class="area area--ueber" id="ueber" data-group>
+        <div class="area__head">
+          <span class="area__badge">01</span>
+          <div>
+            <h2><b>ÜBER</b> Games lernen</h2>
+            <p>Medienwissen rund um Games aufbauen und das eigene Gameverhalten kritisch reflektieren.</p>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Medienwissen rund um Games</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GE</span></span>
+              <div>
+                <h4 class="card__title">Genres</h4>
+                <p class="card__text">Welche Arten von Games gibt es? Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">PG</span></span>
+              <div>
+                <h4 class="card__title">USK/PEGI</h4>
+                <p class="card__text">Alterskennzeichnungen verstehen. Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
+              <div>
+                <h4 class="card__title">Geschichte der Games</h4>
+                <p class="card__text">Von Pong bis heute. Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">CH</span></span>
+              <div>
+                <h4 class="card__title">Schweizer Games</h4>
+                <p class="card__text">Games made in Switzerland. Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ES</span></span>
+              <div>
+                <h4 class="card__title">E-Sports</h4>
+                <p class="card__text">Gamen als Wettkampf. Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">JB</span></span>
+              <div>
+                <h4 class="card__title">Berufe in der Game-Industrie</h4>
+                <p class="card__text">Wer macht eigentlich Games? Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Gameverhalten reflektieren</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GR</span></span>
+              <div>
+                <h4 class="card__title">Gewalt und Radikalisierung in Games</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
+              <div>
+                <h4 class="card__title">Gamesucht</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">+1</span></span>
+              <div>
+                <h4 class="card__title">Positive Effekte von Games</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ME</span></span>
+              <div>
+                <h4 class="card__title">Persönliches Gameverhalten reflektieren</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="area area--design" id="design" data-group>
+        <div class="area__head">
+          <span class="area__badge">02</span>
+          <div>
+            <h2>Mit <b>GAME DESIGN</b> lernen</h2>
+            <p>Eigene Games planen, gestalten und programmieren – und dabei Informatik, Gestaltung und Storytelling verbinden.</p>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Übersicht &amp; Projekte</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">00</span></span>
+              <div>
+                <h4 class="card__title">Übersicht: Mit Game Design lernen</h4>
+                <p class="card__text">Einstieg, Didaktik und Einordnung.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">FS</span></span>
+              <div>
+                <h4 class="card__title">Das Fangspiel entwickeln</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">RP</span></span>
+              <div>
+                <h4 class="card__title">RPG Playground</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">PO</span></span>
+              <div>
+                <h4 class="card__title">Pong in Scratch entwickeln</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">JL</span></span>
+              <div>
+                <h4 class="card__title">Game Design mit Jerry Lawson&#x27;s Birthday</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">KI</span></span>
+              <div>
+                <h4 class="card__title">Entwicklung von Spielen mit generativer KI</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="area area--gamen" id="gamen" data-group>
+        <div class="area__head">
+          <span class="area__badge">03</span>
+          <div>
+            <h2>Beim <b>GAMEN</b> lernen</h2>
+            <p>Ausgewählte Games und Spiele, mit denen sich fachliche und überfachliche Kompetenzen fördern lassen.</p>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Übersicht &amp; Games</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">00</span></span>
+              <div>
+                <h4 class="card__title">Übersicht: Beim Gamen lernen</h4>
+                <p class="card__text">Einstieg, Didaktik und Einordnung.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">AC</span></span>
+              <div>
+                <h4 class="card__title">Assassin&#x27;s Creed Discovery Tour</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">BY</span></span>
+              <div>
+                <h4 class="card__title">Baba Is You</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">AI</span></span>
+              <div>
+                <h4 class="card__title">ChatGPT</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">CI</span></span>
+              <div>
+                <h4 class="card__title">Compute it</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">CO</span></span>
+              <div>
+                <h4 class="card__title">Concept &amp;amp; Concept Kids</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">FE</span></span>
+              <div>
+                <h4 class="card__title">Fake Escape</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">LB</span></span>
+              <div>
+                <h4 class="card__title">Lego Bricktales</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">OS</span></span>
+              <div>
+                <h4 class="card__title">Osmo</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">SG</span></span>
+              <div>
+                <h4 class="card__title">Smart Games</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">VH</span></span>
+              <div>
+                <h4 class="card__title">Valiant Hearts</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">WW</span></span>
+              <div>
+                <h4 class="card__title">Werwörter – Kartenspiel (hybrid)</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">WD</span></span>
+              <div>
+                <h4 class="card__title">When We Disappear</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="material.html" data-category="gamen">
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">ZT</span></span>
+              <div>
+                <h4 class="card__title">ZType</h4>
+                <p class="card__text">Kurzbeschreibung folgt.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <p class="empty-state is-hidden">Nichts gefunden. Game over – versuch's mit einem anderen Suchbegriff.</p>
+
+      <section class="area" data-more>
+        <p class="subhead">Weitere Angebote</p>
+        <div class="grid grid--2">
+          <a class="card mini" href="#">
+            <span class="mini__icon" aria-hidden="true"><span class="kbd" style="border:0;background:none">KU</span></span>
+            <div><h4 class="card__title">Kurse</h4><p class="card__text">Weiterbildungen und Module rund um Games. Platzhalter.</p></div>
+          </a>
+          <a class="card mini" href="#">
+            <span class="mini__icon" aria-hidden="true"><span class="kbd" style="border:0;background:none">WI</span></span>
+            <div><h4 class="card__title">Wissenschaft</h4><p class="card__text">Forschung und Literatur zu Game-based Learning. Platzhalter.</p></div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (auf allen Seiten identisch) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+            <span>eduGaming<span class="logo__dot">.</span>ch</span>
+          </a>
+          <p style="margin-top:14px;max-width:34ch;color:color-mix(in srgb,var(--paper) 70%,transparent)">Games und Game Design im Bildungskontext – ein Angebot der Pädagogischen Hochschule Zürich.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Lernbereiche</h4>
+          <ul>
+            <li><a href="unterrichtsmaterialien.html#ueber">ÜBER Games lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#design">Mit GAME DESIGN lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#gamen">Beim GAMEN lernen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <address>
+            PH Zürich<br>Zentrum Medienbildung und Informatik<br>Lagerstrasse 2, 8090 Zürich<br>
+            <a href="tel:+41433056434">+41 43 305 64 34</a><br>
+            <a href="mailto:adrian.degonda@phzh.ch">adrian.degonda@phzh.ch</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> PH Zürich</span>
+        <span><a href="achievements.html">Achievements</a> · <a href="mailto:adrian.degonda@phzh.ch">Kontakt</a> · <a href="impressum.html">Impressum</a></span>
+        <a href="#main">Press <span class="kbd">▲</span> to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/achievements.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
