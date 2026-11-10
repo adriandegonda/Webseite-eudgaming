@@ -7,15 +7,6 @@
 
   const NEWS = [
     {
-      id: "2026-11-newsletter",
-      date: "2026-11-10",
-      title: "Newsletter abonnieren",
-      text: "Melde dich jetzt für den Newsletter an: Zweimal pro Jahr informiert er über die neusten Entwicklungen im Bereich Games und Schule.",
-      links: [
-        { label: "Jetzt anmelden", href: "mailto:adrian.degonda@phzh.ch?subject=Newsletter%20edugaming.ch&body=Gerne%20melde%20ich%20mich%20f%C3%BCr%20den%20Newsletter%20von%20edugaming.ch%20an." }
-      ]
-    },
-    {
       id: "2026-11-dizh-ludic-culture-hub",
       date: "2026-11-10",
       title: "DIZH-Strukturcall: Ludic Culture Hub",
@@ -24,6 +15,15 @@
         { label: "Zum Event", href: "events.html#event-game-festival" },
         { label: "DIZH: Ludic Culture Hub", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
         { label: "PH Zürich: Projekt", href: "https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" }
+      ]
+    },
+    {
+      id: "2026-11-newsletter",
+      date: "2026-11-09",
+      title: "Newsletter abonnieren",
+      text: "Melde dich jetzt für den Newsletter an: Zweimal pro Jahr informiert er über die neusten Entwicklungen im Bereich Games und Schule.",
+      links: [
+        { label: "Jetzt anmelden", href: "mailto:adrian.degonda@phzh.ch?subject=Newsletter%20edugaming.ch&body=Gerne%20melde%20ich%20mich%20f%C3%BCr%20den%20Newsletter%20von%20edugaming.ch%20an." }
       ]
     },
     {
@@ -145,6 +145,29 @@
     });
   }
 
+  /* Startseite: neuste News im Kasten unter den Events */
+  function renderLatest() {
+    const item = document.querySelector("[data-news-latest-item]");
+    if (!item || !NEWS.length) return;
+    const n = NEWS[0];
+    item.href = BASE + "news.html#" + n.id;
+    item.innerHTML = "";
+    const text = document.createElement("span");
+    text.className = "ev-feed__text";
+    const meta = document.createElement("span");
+    meta.className = "ev-feed__meta";
+    meta.textContent = fmtDate(n.date) + (isRead(n.id) ? "" : " · Neu");
+    const title = document.createElement("span");
+    title.className = "ev-feed__title";
+    title.textContent = n.title;
+    const desc = document.createElement("span");
+    desc.className = "ev-feed__desc";
+    desc.textContent = n.text;
+    text.append(meta, title, desc);
+    item.appendChild(text);
+  }
+
   updateBadges();
   renderList();
+  renderLatest();
 })();

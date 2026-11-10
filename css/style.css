@@ -892,3 +892,8 @@ html.modal-open { overflow: hidden; }
 .md-hint > summary:hover { color: var(--ink); }
 .md-hint p { margin: 8px 0 0; max-width: 60ch; }
 .md-collapse > .md-table-note { margin-top: 14px; }
+
+/* Startseite: Kasten mit der neusten News (unter den Events) */
+.ev-feed--news { margin-top: 14px; }
+.ev-feed__item--static { position: static; }
+.ev-feed__desc { font-size: .88rem; line-height: 1.4; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
