@@ -260,8 +260,11 @@ p { margin: 0 0 1em; }
 .page-hero { padding: clamp(40px, 7vw, 96px) 0 clamp(32px, 5vw, 56px); border-bottom: 1px solid var(--line); }
 .page-hero h1 { font-size: clamp(1.9rem, 7.4vw, 4.4rem); hyphens: auto; overflow-wrap: break-word; }
 .page-hero p { max-width: 60ch; color: var(--ink-2); font-size: 1.15rem; margin: 0; }
-.page-hero__split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
-.page-hero__img { display: block; width: 100%; max-width: 520px; height: auto; justify-self: end; }
+.page-hero__split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.page-hero__split h1 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); hyphens: manual; }
+.page-hero__img { display: block; width: 100%; max-width: 460px; height: auto; justify-self: end; }
+/* Dunkelmodus: heller Untergrund, damit schwarze Schrift und Linien der Skizze lesbar bleiben */
+:root[data-theme="dark"] .page-hero__img { background: #f5f3ec; border-radius: var(--radius); padding: 12px; }
 @media (max-width: 860px) {
   .page-hero__split { grid-template-columns: 1fr; }
   .page-hero__img { max-width: 420px; justify-self: start; }
