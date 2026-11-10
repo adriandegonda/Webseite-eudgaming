@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News – eduGaming.ch</title>
+  <meta name="description" content="Aktuelles rund um eduGaming.ch und Games im Unterricht.">
+  <script>try{var t=localStorage.getItem("eg-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- HEADER (auf allen Seiten identisch) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="eduGaming.ch – Startseite">
+        <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        <span>eduGaming<span class="logo__dot">.</span>ch</span>
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list" id="nav-list">
+          <li><a class="nav__link" href="news.html" data-news-link aria-current="page">News</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Hell-/Dunkelmodus umschalten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brotkrumen"><a href="index.html">Start</a> / News</nav>
+        <h1>News</h1>
+        <p>Kurz und knapp: Neuigkeiten rund um eduGaming.ch und Games im Unterricht.</p>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="container">
+        <div class="news-head">
+          <button class="news-readall" type="button" data-news-readall hidden>Alle als gelesen markieren</button>
+        </div>
+        <div class="news-list" data-news-list>
+          <noscript><p>Für die News muss JavaScript aktiviert sein.</p></noscript>
+        </div>
+        <p class="news-note">Der Gelesen-Status wird nur in diesem Browser gespeichert.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (auf allen Seiten identisch) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+            <span>eduGaming<span class="logo__dot">.</span>ch</span>
+          </a>
+          <p style="margin-top:14px;max-width:34ch;color:color-mix(in srgb,var(--paper) 70%,transparent)">Games und Game Design im Bildungskontext – ein Angebot der Pädagogischen Hochschule Zürich.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Lernbereiche</h4>
+          <ul>
+            <li><a href="unterrichtsmaterialien.html#ueber">ÜBER Games lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#design">Mit GAME DESIGN lernen</a></li>
+            <li><a href="unterrichtsmaterialien.html#gamen">Beim GAMEN lernen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <address>
+            PH Zürich<br>Zentrum Medienbildung und Informatik<br>Lagerstrasse 2, 8090 Zürich<br>
+            <a href="tel:+41433056434">+41 43 305 64 34</a><br>
+            <a href="mailto:adrian.degonda@phzh.ch">adrian.degonda@phzh.ch</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> PH Zürich</span>
+        <span><a href="achievements.html">Achievements</a> · <a href="mailto:adrian.degonda@phzh.ch">Kontakt</a> · <a href="impressum.html">Impressum</a></span>
+        <a href="#main">Press <span class="kbd">▲</span> to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/achievements.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
