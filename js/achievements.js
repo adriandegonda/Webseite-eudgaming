@@ -45,7 +45,7 @@
        Zum Aktivieren name, icon, rule, level, threshold, value und unit wie oben ergänzen. */
     {
       id: "news",
-      name: "Reiner Tisch",
+      name: "Clean Desk",
       icon: NEWS_ICON,
       rule: "Du hast keine ungelesenen News.",
       level: (s) => (s.newsClear ? 1 : 0),

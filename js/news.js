@@ -45,7 +45,7 @@
   const isRead = (id) => read.includes(id);
   const unreadCount = () => NEWS.filter((n) => !isRead(n.id)).length;
 
-  /* Achievement «Reiner Tisch», sobald alle News gelesen sind */
+  /* Achievement «Clean Desk», sobald alle News gelesen sind */
   function checkAchievement() {
     if (unreadCount() === 0 && window.egAchievements && window.egAchievements.newsCleared) {
       window.egAchievements.newsCleared();
