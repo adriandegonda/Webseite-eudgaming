@@ -8,13 +8,14 @@
   const BASE = document.currentScript ? new URL("../", document.currentScript.src).href : "";
 
   const KEY = "eg-achievements";
-  let state = { catBest: 0, clicks: 0, newsClear: false };
+  let state = { catBest: 0, clicks: 0, newsClear: false, searched: false };
   try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY)) || {}); } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
 
   const CAT_ICON = '<svg viewBox="0 0 48 36" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M32 0h4v4h-4zM44 0h4v4h-4zM0 4h4v4h-4zM32 4h4v4h-4zM36 4h4v4h-4zM40 4h4v4h-4zM44 4h4v4h-4zM0 8h4v4h-4zM32 8h4v4h-4zM36 8h4v4h-4zM44 8h4v4h-4zM0 12h4v4h-4zM32 12h4v4h-4zM36 12h4v4h-4zM40 12h4v4h-4zM44 12h4v4h-4zM4 16h4v4h-4zM8 16h4v4h-4zM12 16h4v4h-4zM16 16h4v4h-4zM20 16h4v4h-4zM24 16h4v4h-4zM28 16h4v4h-4zM32 16h4v4h-4zM36 16h4v4h-4zM8 20h4v4h-4zM12 20h4v4h-4zM16 20h4v4h-4zM20 20h4v4h-4zM24 20h4v4h-4zM28 20h4v4h-4zM32 20h4v4h-4zM36 20h4v4h-4zM8 24h4v4h-4zM12 24h4v4h-4zM16 24h4v4h-4zM20 24h4v4h-4zM24 24h4v4h-4zM28 24h4v4h-4zM32 24h4v4h-4zM36 24h4v4h-4zM8 28h4v4h-4zM16 28h4v4h-4zM28 28h4v4h-4zM36 28h4v4h-4zM8 32h4v4h-4zM16 32h4v4h-4zM28 32h4v4h-4zM36 32h4v4h-4z"/></svg>';
   const PIXEL_ICON = '<svg viewBox="0 0 30 30" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" opacity=".35" d="M0 0h8v8H0zM11 0h8v8h-8zM22 0h8v8h-8zM0 11h8v8H0zM22 11h8v8h-8zM0 22h8v8H0zM11 22h8v8h-8zM22 22h8v8h-8z"/><path fill="var(--c-design)" d="M11 11h8v8h-8z"/></svg>';
   const NEWS_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12v14H6a2 2 0 0 1-2-2V5zM16 9h4v8a2 2 0 0 1-2 2h-2"/><path d="m7.5 12 2 2 3.5-4"/></svg>';
+  const SEARCH_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/><path d="m8 10.5 1.8 1.8 3.2-3.6"/></svg>';
   const TROPHY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>';
 
   const fmt = (n) => Math.floor(n).toLocaleString("de-CH");
@@ -51,7 +52,14 @@
       level: (s) => (s.newsClear ? 1 : 0),
       maxLevel: 1
     },
-    { id: "secret-2", level: () => 0 },
+    {
+      id: "search",
+      name: "Wer sucht, der/die findet",
+      icon: SEARCH_ICON,
+      rule: "Du hast bei den Unterrichtsmaterialien eine Suche durchgeführt.",
+      level: (s) => (s.searched ? 1 : 0),
+      maxLevel: 1
+    },
     { id: "secret-3", level: () => 0 },
     { id: "secret-4", level: () => 0 },
     { id: "secret-5", level: () => 0 }
@@ -97,6 +105,11 @@
   /* Schnittstelle für runner.js */
   let lastSaved = state.catBest;
   window.egAchievements = {
+    searched() {
+      if (state.searched) return;
+      state.searched = true;
+      check();
+    },
     newsCleared() {
       if (state.newsClear) return;
       state.newsClear = true;
@@ -167,7 +180,7 @@
   if (reset) {
     reset.addEventListener("click", () => {
       if (!confirm("Alle Achievements in diesem Browser zurücksetzen?")) return;
-      state = { catBest: 0, clicks: 0, newsClear: false };
+      state = { catBest: 0, clicks: 0, newsClear: false, searched: false };
       known = levels();
       save();
       renderPage();

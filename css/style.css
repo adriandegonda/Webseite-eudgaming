@@ -870,11 +870,6 @@ html.modal-open { overflow: hidden; }
 .news-note a:hover { text-decoration-color: currentColor; }
 
 /* Übersichts-Karten (00) leicht in der Kategoriefarbe einfärben */
-.card.mini--design { background: color-mix(in srgb, var(--cat-design-soft) 55%, var(--paper)); border-color: color-mix(in srgb, var(--cat-design) 35%, transparent); }
-.card.mini--gamen  { background: color-mix(in srgb, var(--cat-gamen-soft) 55%, var(--paper)); border-color: color-mix(in srgb, var(--cat-gamen) 35%, transparent); }
-.mini--overview .mini__icon { background: var(--paper); }
-.mini--design .mini__icon { color: var(--cat-design); }
-.mini--gamen .mini__icon  { color: var(--cat-gamen); }
 
 /* Spieleliste: eingebettete Datenbank, einklappbare alte Liste, Hinweis */
 .md-db { margin: 12px 0 28px; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: #fff; }
@@ -912,15 +907,7 @@ html.modal-open { overflow: hidden; }
 /* Material-Kachel mit Hintergrundbild (z. B. Orbit Cleaner) */
 .card.mini--image { position: relative; isolation: isolate; overflow: hidden; }
 .mini__bg { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; }
-.card.mini--image::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--surface) 90%, transparent) 0%, color-mix(in srgb, var(--surface) 82%, transparent) 55%, color-mix(in srgb, var(--surface) 35%, transparent) 100%); }
-.mini--image .mini__icon { background: var(--surface); }
 .mini__ext { font-size: .8em; color: var(--ink-3); }
-.card.mini--dark { border-color: #1b1fa8; }
-.card.mini--dark::after { background: linear-gradient(90deg, rgba(8, 10, 70, .88) 0%, rgba(8, 10, 70, .72) 60%, rgba(8, 10, 70, .35) 100%); }
-.mini--dark .card__title { color: #fff; }
-.mini--dark .card__text { color: rgba(255, 255, 255, .85); }
-.mini--dark .mini__icon { background: rgba(255, 255, 255, .14); color: #fff; }
-.mini--dark .mini__icon .kbd { color: #fff; }
 
 /* Forschung: Projekte und Publikationen als Liste */
 .res-list { list-style: none; margin: 14px 0 34px; padding: 0; display: grid; gap: 12px; }
@@ -930,3 +917,57 @@ html.modal-open { overflow: hidden; }
 .md .res__title { margin: 4px 0 4px; font-size: 1.08rem; line-height: 1.3; color: var(--ink); }
 .res__text { color: var(--ink-2); font-size: .93rem; }
 .md .res__links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: .9rem; font-weight: 600; }
+
+/* Übersichts-Kacheln (00): satte Kategoriefarbe, weisse Schrift */
+.card.mini--design { background: var(--cat-design); border-color: var(--cat-design); }
+.card.mini--gamen  { background: var(--cat-gamen);  border-color: var(--cat-gamen); }
+[data-theme="dark"] .card.mini--design { background: #c8343c; border-color: #c8343c; }
+[data-theme="dark"] .card.mini--gamen  { background: #2a63c9; border-color: #2a63c9; }
+.mini--overview .card__title { color: #fff; }
+.mini--overview .card__text { color: rgba(255, 255, 255, .9); }
+.mini--overview .mini__icon { background: rgba(255, 255, 255, .2); }
+.mini--overview .mini__icon .kbd { color: #fff; }
+.card.mini--overview:hover { border-color: var(--ink); }
+
+/* Kacheln mit Hintergrundbild: heller Farbfilter in der Kategoriefarbe, schwarze Schrift (auch im Dunkelmodus) */
+.card.mini--image { --tint: #ffffff; border-color: color-mix(in srgb, var(--tint-c, var(--line)) 40%, transparent); }
+.card.mini--image[data-category="gamen"]  { --tint: #e3ecfd; --tint-c: #2f6fdb; }
+.card.mini--image[data-category="design"] { --tint: #fde4e5; --tint-c: #e0434b; }
+.card.mini--image[data-category="ueber"]  { --tint: #dcf3e6; --tint-c: #1f9d5c; }
+.card.mini--image::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--tint) 92%, transparent) 0%, color-mix(in srgb, var(--tint) 84%, transparent) 60%, color-mix(in srgb, var(--tint) 55%, transparent) 100%); }
+.mini--image .card__title { color: #15141b; }
+.mini--image .card__text { color: #3a3846; }
+.mini--image .mini__icon { background: #fff; }
+.mini--image .mini__icon .kbd { color: var(--tint-c, #15141b); }
+
+/* Suche: X zum Löschen */
+.search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.search__clear { flex: none; display: grid; place-items: center; width: 24px; height: 24px; margin: -4px -6px -4px 0; padding: 0; border: 0; border-radius: 50%; background: var(--paper-2); color: var(--ink-2); cursor: pointer; }
+.search__clear:hover { background: var(--ink); color: var(--paper); }
+.search__clear svg { width: 14px; height: 14px; color: inherit; }
+.search__clear[hidden] { display: none; }
+
+/* Forschung: drei Hauptzugänge */
+.access-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 14px 0 20px; }
+.access { display: block; padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid var(--line); border-top: 5px solid var(--c, var(--ink)); background: var(--surface); text-decoration: none; color: var(--ink); transition: transform .15s; }
+.access:hover { transform: translateY(-2px); }
+.access--design { --c: var(--cat-design); }
+.access--ueber { --c: var(--cat-ueber); }
+.access--gamen { --c: var(--cat-gamen); }
+.access__en { display: block; font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--c); }
+.access__de { display: block; margin-top: 4px; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.access__text { display: block; margin-top: 4px; font-size: .88rem; color: var(--ink-2); }
+.md .md-lead { font-size: 1.05rem; color: var(--ink-2); }
+.res--accent { border-left-color: var(--c-accent); }
+.md-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: start; margin-bottom: 30px; }
+.md-gallery .md-figure { margin: 0; }
+.md-gallery .md-figure img { width: 100%; max-height: 260px; object-fit: cover; }
+.md figcaption { margin-top: 6px; font-size: .82rem; color: var(--ink-3); }
+.md a.access, .md a.access span { text-decoration: none; }
+.md a.access:hover .access__de { text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* Unterrichtsmaterialien: «Mehr anzeigen» */
+.is-collapsed { display: none !important; }
+.more-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 14px; padding: 12px 18px; border: 1.5px dashed var(--line); border-radius: var(--radius-sm); background: transparent; color: var(--ink-2); font: inherit; font-weight: 600; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
+.more-btn:hover { border-color: var(--ink); color: var(--ink); background: var(--surface); }
+.more-btn[hidden] { display: none; }

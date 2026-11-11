@@ -82,7 +82,98 @@
         g.classList.toggle("is-hidden", !any);
       });
       if (empty) empty.classList.toggle("is-hidden", visible > 0);
+      collapse();
     };
+
+    /* Bei «Alle» ohne Suche: pro Lernbereich nur 2 Reihen, Rest per «Mehr anzeigen» */
+    const areas = document.querySelectorAll(".area[id]");
+    const expanded = {};
+    function collapse() {
+      const q = (search ? search.value : "").trim();
+      const limitOn = active === "alle" && !q;
+      areas.forEach((area) => {
+        const cards = Array.from(area.querySelectorAll("[data-category]"));
+        const subgroups = area.querySelectorAll("div[data-group]");
+        cards.forEach((c) => c.classList.remove("is-collapsed"));
+        subgroups.forEach((g) => g.classList.remove("is-collapsed"));
+        const grid = area.querySelector(".grid");
+        const cols = grid ? getComputedStyle(grid).gridTemplateColumns.split(" ").filter(Boolean).length : 3;
+        const extra = cards.slice(cols * 2);
+
+        let btn = area.querySelector(".more-btn");
+        if (!btn && extra.length) {
+          btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "more-btn";
+          btn.addEventListener("click", () => {
+            expanded[area.id] = !expanded[area.id];
+            collapse();
+            if (!expanded[area.id]) area.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+          area.appendChild(btn);
+        }
+        if (!btn) return;
+        btn.hidden = !limitOn || !extra.length;
+        if (btn.hidden) return;
+
+        if (expanded[area.id]) {
+          btn.innerHTML = 'Weniger anzeigen <span aria-hidden="true">↑</span>';
+          btn.setAttribute("aria-expanded", "true");
+          return;
+        }
+        extra.forEach((c) => c.classList.add("is-collapsed"));
+        subgroups.forEach((g) => {
+          if (!g.querySelector("[data-category]:not(.is-collapsed)")) g.classList.add("is-collapsed");
+        });
+        btn.innerHTML = "Mehr anzeigen (" + extra.length + ') <span aria-hidden="true">↓</span>';
+        btn.setAttribute("aria-expanded", "false");
+      });
+    }
+    let resizeTimer;
+    window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(collapse, 150); });
+    collapse();
+
+    /* Suchfeld: Beispielbegriffe wechseln alle 5 s (Tipp-Animation) */
+    if (search) {
+      const TERMS = ["Orbit Cleaner", "Scratch", "Fake News", "Altersfreigaben", "Weltkrieg",
+        "Programmieren", "Gamesucht", "Tastaturschreiben", "Prompt", "Fortnite"];
+      const PREFIX = "Suchen, z.\u00a0B. ";
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let term = "Orbit Cleaner";
+      let timer = null;
+      let paused = false;
+      const show = (t) => { if (!paused) search.placeholder = PREFIX + t; };
+      const pick = () => {
+        const options = TERMS.filter((t) => t !== term);
+        return options[Math.floor(Math.random() * options.length)];
+      };
+      const step = (fn, ms) => { timer = setTimeout(fn, ms); };
+      function cycle() {
+        step(() => {
+          if (paused) return;
+          const next = pick();
+          if (reduce) { term = next; show(term); cycle(); return; }
+          let cur = term;
+          (function erase() {
+            if (paused) return;
+            if (cur.length) { cur = cur.slice(0, -1); show(cur); step(erase, 55); return; }
+            let i = 0;
+            step(function type() {
+              if (paused) return;
+              i++; show(next.slice(0, i));
+              if (i < next.length) { step(type, 85 + Math.random() * 60); return; }
+              term = next; cycle();
+            }, 250);
+          })();
+        }, 5000);
+      }
+      const stop = () => { paused = true; clearTimeout(timer); };
+      const start = () => { paused = false; clearTimeout(timer); show(term); cycle(); };
+      search.addEventListener("focus", () => { stop(); search.placeholder = ""; });
+      search.addEventListener("blur", () => { if (!search.value) start(); });
+      document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); else if (document.activeElement !== search && !search.value) start(); });
+      start();
+    }
 
     chips.forEach((chip) =>
       chip.addEventListener("click", () => {
@@ -92,7 +183,24 @@
         apply();
       })
     );
-    if (search) search.addEventListener("input", apply);
+    const clear = document.querySelector("[data-search-clear]");
+    const syncClear = () => { if (clear) clear.hidden = !(search && search.value); };
+    /* Achievement «Wer sucht, der/die findet»: Suchbegriff mit mind. 2 Zeichen, kurz stehen gelassen */
+    let achTimer;
+    const trackSearch = () => {
+      clearTimeout(achTimer);
+      if (search.value.trim().length < 2) return;
+      achTimer = setTimeout(() => { if (window.egAchievements && window.egAchievements.searched) window.egAchievements.searched(); }, 800);
+    };
+    if (search) search.addEventListener("input", () => { syncClear(); apply(); trackSearch(); });
+    if (clear) {
+      clear.addEventListener("click", (e) => {
+        e.preventDefault();
+        search.value = "";
+        syncClear(); apply();
+        search.focus();
+      });
+    }
 
     // Direktlink via #ueber, #design, #gamen
     const hash = location.hash.replace("#", "");
