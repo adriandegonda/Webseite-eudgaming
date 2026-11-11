@@ -29,6 +29,7 @@
           <li><a class="nav__link" href="news.html" data-news-link>News</a></li>
           <li><a class="nav__link" href="events.html">Events</a></li>
           <li><a class="nav__link" href="unterrichtsmaterialien.html" aria-current="page">Unterrichtsmaterialien</a></li>
+          <li><a class="nav__link" href="forschung.html">Forschung</a></li>
         </ul>
         <button class="theme-toggle" type="button" aria-label="Hell-/Dunkelmodus umschalten">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -55,166 +56,19 @@
     <div class="container">
       <div class="filters" data-filters role="group" aria-label="Materialien filtern" style="margin-top:32px;align-items:center">
         <button class="chip" type="button" data-filter="alle" aria-pressed="true">Alle</button>
+        <button class="chip" type="button" data-filter="gamen" aria-pressed="false">Beim GAMEN lernen</button>
         <button class="chip" type="button" data-filter="design" aria-pressed="false">Mit GAME DESIGN lernen</button>
         <button class="chip" type="button" data-filter="ueber" aria-pressed="false">ÜBER Games lernen</button>
-        <button class="chip" type="button" data-filter="gamen" aria-pressed="false">Beim GAMEN lernen</button>
         <label class="search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <span class="visually-hidden">Materialien durchsuchen</span>
-          <input type="search" placeholder="Suchen, z.&nbsp;B. Scratch" data-search>
+          <input type="search" placeholder="Suchen, z.&nbsp;B. Orbit Cleaner" data-search>
         </label>
       </div>
 
-      <section class="area area--design" id="design" data-group>
-        <div class="area__head">
-          <span class="area__badge">01</span>
-          <div>
-            <h2>Mit <b>GAME DESIGN</b> lernen</h2>
-            <p>Eigene Games planen, gestalten und programmieren – und dabei Informatik, Gestaltung und Storytelling verbinden.</p>
-          </div>
-        </div>
-        <div data-group>
-          <p class="subhead">Übersicht &amp; Projekte</p>
-          <div class="grid grid--3">
-            <a class="card mini mini--overview mini--design" href="materialien/uebersicht-game-design.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">00</span></span>
-              <div>
-                <h4 class="card__title">Übersicht: Mit Game Design lernen</h4>
-                <p class="card__text">Von einfachen Plattformen bis zum eigenen Game: Ideen in vier Levels.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/fangspiel.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">FS</span></span>
-              <div>
-                <h4 class="card__title">Das Fangspiel entwickeln</h4>
-                <p class="card__text">Fallende Dinge fangen: ein erstes eigenes Spiel in Scratch programmieren.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/rpg-playground.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">RP</span></span>
-              <div>
-                <h4 class="card__title">RPG Playground</h4>
-                <p class="card__text">Eigene Rollenspiele erstellen – mit Fokus auf Geschichte, Dialoge und Spielwelt.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/pong-in-scratch.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">PO</span></span>
-              <div>
-                <h4 class="card__title">Pong in Scratch entwickeln</h4>
-                <p class="card__text">Den Spieleklassiker nachprogrammieren – mit Dossier zum Ausdrucken.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/jerry-lawson.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">JL</span></span>
-              <div>
-                <h4 class="card__title">Game Design mit Jerry Lawson&#x27;s Birthday</h4>
-                <p class="card__text">Niederschwellig eigene Mini-Games mit dem Google Doodle entwickeln.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/spiele-mit-ki.html" data-category="design">
-              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">KI</span></span>
-              <div>
-                <h4 class="card__title">Entwicklung von Spielen mit generativer KI</h4>
-                <p class="card__text">Spiele via Prompts entwickeln – mit Anleitung zum Herunterladen.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="area area--ueber" id="ueber" data-group>
-        <div class="area__head">
-          <span class="area__badge">02</span>
-          <div>
-            <h2><b>ÜBER</b> Games lernen</h2>
-            <p>Medienwissen rund um Games aufbauen und das eigene Gameverhalten kritisch reflektieren.</p>
-          </div>
-        </div>
-        <div data-group>
-          <p class="subhead">Medienwissen rund um Games</p>
-          <div class="grid grid--3">
-            <a class="card mini" href="materialien/genres.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GE</span></span>
-              <div>
-                <h4 class="card__title">Genres</h4>
-                <p class="card__text">Welche Arten von Games gibt es? Mit fertigen Unterrichtseinheiten, Lösungen und Unterrichtsideen.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/usk-pegi.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">PG</span></span>
-              <div>
-                <h4 class="card__title">USK/PEGI</h4>
-                <p class="card__text">Altersfreigaben verstehen, diskutieren und im Unterricht thematisieren.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/geschichte-der-games.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
-              <div>
-                <h4 class="card__title">Geschichte der Games</h4>
-                <p class="card__text">Von Tennis for Two bis Fortnite – die Geschichte in 5 Punkten und Unterrichtsideen.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/schweizer-games.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">CH</span></span>
-              <div>
-                <h4 class="card__title">Schweizer Games</h4>
-                <p class="card__text">Games made in Switzerland: Fakten, Unterrichtsideen und Links.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/e-sports.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ES</span></span>
-              <div>
-                <h4 class="card__title">E-Sports</h4>
-                <p class="card__text">Gamen als Wettkampf – nützliche Links.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/berufe-game-industrie.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">JB</span></span>
-              <div>
-                <h4 class="card__title">Berufe in der Game-Industrie</h4>
-                <p class="card__text">Wer macht eigentlich Games? Nützliche Links.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div data-group>
-          <p class="subhead">Gameverhalten reflektieren</p>
-          <div class="grid grid--3">
-            <a class="card mini" href="materialien/gewalt-und-radikalisierung.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GR</span></span>
-              <div>
-                <h4 class="card__title">Gewalt und Radikalisierung in Games</h4>
-                <p class="card__text">Gewaltdarstellungen, Cyber-Grooming und Hate Speech – nützliche Links.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/gamesucht.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
-              <div>
-                <h4 class="card__title">Gamesucht</h4>
-                <p class="card__text">Wenn aus Spass Sucht wird – nützliche Links.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/positive-effekte.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">+1</span></span>
-              <div>
-                <h4 class="card__title">Positive Effekte von Games</h4>
-                <p class="card__text">Wo und wann können Games hilfreich sein? Nützliche Links.</p>
-              </div>
-            </a>
-            <a class="card mini" href="materialien/persoenliches-gameverhalten.html" data-category="ueber">
-              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ME</span></span>
-              <div>
-                <h4 class="card__title">Persönliches Gameverhalten reflektieren</h4>
-                <p class="card__text">Das eigene Gameverhalten und eigene Fähigkeiten reflektieren – nützliche Links.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section class="area area--gamen" id="gamen" data-group>
         <div class="area__head">
-          <span class="area__badge">03</span>
+          <span class="area__badge">01</span>
           <div>
             <h2>Beim <b>GAMEN</b> lernen</h2>
             <p>Ausgewählte Games und Spiele, mit denen sich fachliche und überfachliche Kompetenzen fördern lassen.</p>
@@ -228,6 +82,14 @@
               <div>
                 <h4 class="card__title">Übersicht: Beim Gamen lernen</h4>
                 <p class="card__text">Die grosse Liste möglicher Spiele für den Unterricht – mit Themen, Fächern und Zyklen.</p>
+              </div>
+            </a>
+            <a class="card mini mini--image mini--dark" href="materialien/orbit-cleaner.html" data-category="gamen">
+              <span class="mini__bg" style="background-image:url('img/materialien/orbit-cleaner-app.jpg')" aria-hidden="true"></span>
+              <span class="mini__icon tag--gamen" aria-hidden="true"><span class="kbd" style="border:0;background:none">OC</span></span>
+              <div>
+                <h4 class="card__title">Orbit Cleaner</h4>
+                <p class="card__text">Brett- und App-Spiel der PH Zürich: Programmierkonzepte spielerisch entdecken (3./4. Klasse) – mit Druckvorlagen.</p>
               </div>
             </a>
             <a class="card mini" href="materialien/assassins-creed.html" data-category="gamen">
@@ -325,21 +187,154 @@
         </div>
       </section>
 
-      <p class="empty-state is-hidden">Nichts gefunden. Game over – versuch's mit einem anderen Suchbegriff.</p>
-
-      <section class="area" data-more>
-        <p class="subhead">Weitere Angebote</p>
-        <div class="grid grid--2">
-          <a class="card mini" href="materialien/kurse.html">
-            <span class="mini__icon" aria-hidden="true"><span class="kbd" style="border:0;background:none">KU</span></span>
-            <div><h4 class="card__title">Kurse</h4><p class="card__text">Weiterbildungen zum Thema sowie Präsentationen und Unterlagen der Workshops.</p></div>
-          </a>
-          <a class="card mini" href="materialien/wissenschaft.html">
-            <span class="mini__icon" aria-hidden="true"><span class="kbd" style="border:0;background:none">WI</span></span>
-            <div><h4 class="card__title">Wissenschaft</h4><p class="card__text">Zugänge, Publikationen und Projekte zu Games im Unterricht.</p></div>
-          </a>
+      <section class="area area--design" id="design" data-group>
+        <div class="area__head">
+          <span class="area__badge">02</span>
+          <div>
+            <h2>Mit <b>GAME DESIGN</b> lernen</h2>
+            <p>Eigene Games planen, gestalten und programmieren – und dabei Informatik, Gestaltung und Storytelling verbinden.</p>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Übersicht &amp; Projekte</p>
+          <div class="grid grid--3">
+            <a class="card mini mini--overview mini--design" href="materialien/uebersicht-game-design.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">00</span></span>
+              <div>
+                <h4 class="card__title">Übersicht: Mit Game Design lernen</h4>
+                <p class="card__text">Von einfachen Plattformen bis zum eigenen Game: Ideen in vier Levels.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/fangspiel.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">FS</span></span>
+              <div>
+                <h4 class="card__title">Das Fangspiel entwickeln</h4>
+                <p class="card__text">Fallende Dinge fangen: ein erstes eigenes Spiel in Scratch programmieren.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/rpg-playground.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">RP</span></span>
+              <div>
+                <h4 class="card__title">RPG Playground</h4>
+                <p class="card__text">Eigene Rollenspiele erstellen – mit Fokus auf Geschichte, Dialoge und Spielwelt.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/pong-in-scratch.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">PO</span></span>
+              <div>
+                <h4 class="card__title">Pong in Scratch entwickeln</h4>
+                <p class="card__text">Den Spieleklassiker nachprogrammieren – mit Dossier zum Ausdrucken.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/jerry-lawson.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">JL</span></span>
+              <div>
+                <h4 class="card__title">Game Design mit Jerry Lawson&#x27;s Birthday</h4>
+                <p class="card__text">Niederschwellig eigene Mini-Games mit dem Google Doodle entwickeln.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/spiele-mit-ki.html" data-category="design">
+              <span class="mini__icon tag--design" aria-hidden="true"><span class="kbd" style="border:0;background:none">KI</span></span>
+              <div>
+                <h4 class="card__title">Entwicklung von Spielen mit generativer KI</h4>
+                <p class="card__text">Spiele via Prompts entwickeln – mit Anleitung zum Herunterladen.</p>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
+
+      <section class="area area--ueber" id="ueber" data-group>
+        <div class="area__head">
+          <span class="area__badge">03</span>
+          <div>
+            <h2><b>ÜBER</b> Games lernen</h2>
+            <p>Medienwissen rund um Games aufbauen und das eigene Gameverhalten kritisch reflektieren.</p>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Medienwissen rund um Games</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="materialien/genres.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GE</span></span>
+              <div>
+                <h4 class="card__title">Genres</h4>
+                <p class="card__text">Welche Arten von Games gibt es? Mit fertigen Unterrichtseinheiten, Lösungen und Unterrichtsideen.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/usk-pegi.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">PG</span></span>
+              <div>
+                <h4 class="card__title">USK/PEGI</h4>
+                <p class="card__text">Altersfreigaben verstehen, diskutieren und im Unterricht thematisieren.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/geschichte-der-games.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
+              <div>
+                <h4 class="card__title">Geschichte der Games</h4>
+                <p class="card__text">Von Tennis for Two bis Fortnite – die Geschichte in 5 Punkten und Unterrichtsideen.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/schweizer-games.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">CH</span></span>
+              <div>
+                <h4 class="card__title">Schweizer Games</h4>
+                <p class="card__text">Games made in Switzerland: Fakten, Unterrichtsideen und Links.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/e-sports.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ES</span></span>
+              <div>
+                <h4 class="card__title">E-Sports</h4>
+                <p class="card__text">Gamen als Wettkampf – nützliche Links.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/berufe-game-industrie.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">JB</span></span>
+              <div>
+                <h4 class="card__title">Berufe in der Game-Industrie</h4>
+                <p class="card__text">Wer macht eigentlich Games? Nützliche Links.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div data-group>
+          <p class="subhead">Gameverhalten reflektieren</p>
+          <div class="grid grid--3">
+            <a class="card mini" href="materialien/gewalt-und-radikalisierung.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GR</span></span>
+              <div>
+                <h4 class="card__title">Gewalt und Radikalisierung in Games</h4>
+                <p class="card__text">Gewaltdarstellungen, Cyber-Grooming und Hate Speech – nützliche Links.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/gamesucht.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">GS</span></span>
+              <div>
+                <h4 class="card__title">Gamesucht</h4>
+                <p class="card__text">Wenn aus Spass Sucht wird – nützliche Links.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/positive-effekte.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">+1</span></span>
+              <div>
+                <h4 class="card__title">Positive Effekte von Games</h4>
+                <p class="card__text">Wo und wann können Games hilfreich sein? Nützliche Links.</p>
+              </div>
+            </a>
+            <a class="card mini" href="materialien/persoenliches-gameverhalten.html" data-category="ueber">
+              <span class="mini__icon tag--ueber" aria-hidden="true"><span class="kbd" style="border:0;background:none">ME</span></span>
+              <div>
+                <h4 class="card__title">Persönliches Gameverhalten reflektieren</h4>
+                <p class="card__text">Das eigene Gameverhalten und eigene Fähigkeiten reflektieren – nützliche Links.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <p class="empty-state is-hidden">Nichts gefunden. Game over – versuch's mit einem anderen Suchbegriff.</p>
     </div>
   </main>
 
@@ -359,6 +354,7 @@
           <ul>
             <li><a href="events.html">Events</a></li>
             <li><a href="unterrichtsmaterialien.html">Unterrichtsmaterialien</a></li>
+            <li><a href="forschung.html">Forschung</a></li>
           </ul>
         </div>
         <div>
