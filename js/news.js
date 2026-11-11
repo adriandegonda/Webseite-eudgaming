@@ -8,7 +8,7 @@
   const NEWS = [
     {
       id: "2026-11-dizh-ludic-culture-hub",
-      date: "2026-11-10",
+      date: "2026-11-11",
       title: "DIZH-Strukturcall: Ludic Culture Hub",
       images: [
         { src: "img/news/ludic-culture-hub.png", alt: "Ludic Culture Hub (DIZH)", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
@@ -23,7 +23,7 @@
     },
     {
       id: "2026-11-newsletter",
-      date: "2026-11-09",
+      date: "2026-11-10",
       title: "Newsletter abonnieren",
       text: "Melde dich jetzt für den Newsletter an: Zweimal pro Jahr informiert er über die neusten Entwicklungen im Bereich Games und Schule.",
       links: [
