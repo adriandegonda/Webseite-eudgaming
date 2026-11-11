@@ -17,6 +17,7 @@
       text: "Im Rahmen des DIZH-Strukturcalls «Ludic Culture Hub» übernimmt die PH Zürich die Perspektive der Ludic Education. Dabei wird ein «Game Design Festival der Schule» lanciert, an dem Schüler:innen und Lehrpersonen ihre Spiele vorstellen können. Weitere Informationen folgen im Januar 2027.",
       links: [
         { label: "Zum Event", href: "events.html#event-game-festival" },
+        { label: "Mehr zum Projekt", href: "forschung.html#ludic-culture-hub" },
         { label: "DIZH: Ludic Culture Hub", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
         { label: "PH Zürich: Projekt", href: "https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" }
       ]
