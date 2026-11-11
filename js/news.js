@@ -10,6 +10,10 @@
       id: "2026-11-dizh-ludic-culture-hub",
       date: "2026-11-10",
       title: "DIZH-Strukturcall: Ludic Culture Hub",
+      images: [
+        { src: "img/news/ludic-culture-hub.png", alt: "Ludic Culture Hub (DIZH)", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
+        { src: "img/news/phzh.png", alt: "PH Zürich: Projekt Ludic Culture Hub", href: "https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" }
+      ],
       text: "Im Rahmen des DIZH-Strukturcalls «Ludic Culture Hub» übernimmt die PH Zürich die Perspektive der Ludic Education. Dabei wird ein «Game Design Festival der Schule» lanciert, an dem Schüler:innen und Lehrpersonen ihre Spiele vorstellen können. Weitere Informationen folgen im Januar 2027.",
       links: [
         { label: "Zum Event", href: "events.html#event-game-festival" },
@@ -129,7 +133,30 @@
       });
       foot.appendChild(btn);
 
-      item.append(meta, h, p, foot);
+      item.append(meta, h);
+      if (n.images && n.images.length) {
+        const row = document.createElement("div");
+        row.className = "news-item__imgs";
+        n.images.forEach((im) => {
+          const img = document.createElement("img");
+          img.className = "news-item__img";
+          img.src = absolute(im.src);
+          img.alt = im.alt || "";
+          img.loading = "lazy";
+          if (im.href) {
+            const a = document.createElement("a");
+            a.className = "news-item__imglink";
+            a.href = absolute(im.href);
+            if (/^https?:/.test(im.href)) { a.target = "_blank"; a.rel = "noopener"; }
+            a.appendChild(img);
+            row.appendChild(a);
+          } else {
+            row.appendChild(img);
+          }
+        });
+        item.appendChild(row);
+      }
+      item.append(p, foot);
       list.appendChild(item);
     });
 
