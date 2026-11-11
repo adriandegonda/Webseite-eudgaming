@@ -42,8 +42,7 @@
       value: (s) => s.clicks,
       unit: "Klicks"
     },
-    /* Noch nicht freischaltbar: Platzhalter für künftige Achievements.
-       Zum Aktivieren name, icon, rule, level, threshold, value und unit wie oben ergänzen. */
+    /* Einmalige Achievements (maxLevel: 1) */
     {
       id: "news",
       name: "Clean Desk",
@@ -54,12 +53,15 @@
     },
     {
       id: "search",
-      name: "Wer sucht, der/die findet",
+      name: "Wer sucht, der findet",
       icon: SEARCH_ICON,
       rule: "Du hast bei den Unterrichtsmaterialien eine Suche durchgeführt.",
       level: (s) => (s.searched ? 1 : 0),
       maxLevel: 1
     },
+    /* Noch nicht freischaltbar: Platzhalter für künftige Achievements.
+       Zum Aktivieren eine id vergeben und name, icon, rule, level (und maxLevel bzw.
+       threshold, value, unit) wie oben ergänzen. */
     { id: "secret-3", level: () => 0 },
     { id: "secret-4", level: () => 0 },
     { id: "secret-5", level: () => 0 }
