@@ -1,5 +1,6 @@
 /* eduGaming.ch – News
    Neue News oben in NEWS einfügen (neueste zuerst). Jede News braucht eine eindeutige id.
+   Im Text sind Links in der Form [Linktext](URL) möglich.
    Gelesen-Status wird nur im Browser gespeichert (localStorage, Schlüssel «eg-news-read»).
    Auf allen Seiten einbinden (zeigt die Anzahl ungelesener News in der Navigation). */
 (function () {
@@ -14,12 +15,10 @@
         { src: "img/news/ludic-culture-hub.png", alt: "Ludic Culture Hub (DIZH)", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
         { src: "img/news/phzh.png", alt: "PH Zürich: Projekt Ludic Culture Hub", href: "https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" }
       ],
-      text: "Im Rahmen des DIZH-Strukturcalls «Ludic Culture Hub» übernimmt die PH Zürich die Perspektive der Ludic Education. Dabei wird ein «Game Design Festival der Schule» lanciert, an dem Schüler:innen und Lehrpersonen ihre Spiele vorstellen können. Weitere Informationen folgen im Januar 2027.",
+      text: "Im Rahmen des [DIZH-Strukturcalls «Ludic Culture Hub»](https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/) übernimmt die [PH Zürich](https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/) die Perspektive der Ludic Education. Dabei wird ein «Game Design Festival der Schule» lanciert, an dem Schüler:innen und Lehrpersonen ihre Spiele vorstellen können. Weitere Informationen folgen im Januar 2027.",
       links: [
         { label: "Zum Event", href: "events.html#event-game-festival" },
-        { label: "Mehr zum Projekt", href: "forschung.html#ludic-culture-hub" },
-        { label: "DIZH: Ludic Culture Hub", href: "https://www.dizh.uzh.ch/2026/08/13/ludic-culture-hub/" },
-        { label: "PH Zürich: Projekt", href: "https://phzh.ch/ueber-die-phzh/themen-und-taetigkeiten/projekte/ludic-culture-hub/" }
+        { label: "Mehr zum Projekt", href: "forschung.html#ludic-culture-hub" }
       ]
     },
     {
@@ -110,7 +109,7 @@
 
       const p = document.createElement("p");
       p.className = "news-item__text";
-      p.textContent = n.text;
+      appendRich(p, n.text);
 
       const foot = document.createElement("div");
       foot.className = "news-item__foot";
@@ -173,6 +172,24 @@
     });
   }
 
+  /* Links im Text: [Linktext](URL) */
+  const LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  const plain = (t) => t.replace(LINK_RE, "$1");
+  function appendRich(el, t) {
+    let last = 0;
+    t.replace(LINK_RE, (m, label, href, i) => {
+      el.appendChild(document.createTextNode(t.slice(last, i)));
+      const a = document.createElement("a");
+      a.href = absolute(href);
+      a.textContent = label;
+      if (/^https?:/.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
+      el.appendChild(a);
+      last = i + m.length;
+      return m;
+    });
+    el.appendChild(document.createTextNode(t.slice(last)));
+  }
+
   /* Startseite: neuste News im Kasten unter den Events */
   function renderLatest() {
     const item = document.querySelector("[data-news-latest-item]");
@@ -190,7 +207,7 @@
     title.textContent = n.title;
     const desc = document.createElement("span");
     desc.className = "ev-feed__desc";
-    desc.textContent = n.text;
+    desc.textContent = plain(n.text);
     text.append(meta, title, desc);
     item.appendChild(text);
   }

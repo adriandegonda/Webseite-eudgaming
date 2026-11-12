@@ -431,6 +431,13 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); borde
 .page-hero__img { display: block; width: 100%; max-width: 460px; height: auto; justify-self: end; }
 /* Dunkelmodus: heller Untergrund, damit die Skizze lesbar bleibt */
 :root[data-theme="dark"] .page-hero__img { background: #f5f3ec; border-radius: var(--radius); padding: 12px; }
+/* Vergrösserbare Bilder (data-zoom): Klick öffnet, weiterer Klick schliesst */
+img[data-zoom] { cursor: zoom-in; }
+.img-zoom { max-width: none; max-height: none; width: 100vw; height: 100vh; margin: 0; padding: 16px; border: 0; background: transparent; display: grid; place-items: center; cursor: zoom-out; }
+.img-zoom:not([open]) { display: none; }
+.img-zoom[open] { animation: modal-in .2s ease-out; }
+.img-zoom::backdrop { background: rgba(12, 11, 16, .8); backdrop-filter: blur(4px); }
+.img-zoom img { max-width: min(1400px, 100%); max-height: calc(100vh - 32px); width: auto; height: auto; background: #f5f3ec; border-radius: var(--radius); padding: clamp(8px, 2vw, 20px); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
 @media (max-width: 860px) {
   .page-hero__split { grid-template-columns: 1fr; }
   .page-hero__img { max-width: 420px; justify-self: start; }
@@ -643,6 +650,7 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); borde
 
 /* 11. Detailseiten -------------------------------------------------------- */
 .detail { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: clamp(32px, 5vw, 64px); align-items: start; }
+.detail--full { grid-template-columns: minmax(0, 1fr); }
 .detail__main h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-top: 1.6em; }
 .detail__main h2:first-of-type { margin-top: 0; }
 .detail__main p, .detail__main li { color: var(--ink-2); }
@@ -749,6 +757,9 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); borde
 
 /* Projektkarte (z. B. Ludic Culture Hub) */
 .md .project { margin: 2.2em 0 0; padding: clamp(18px, 3vw, 28px); border: 2px solid var(--ink); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-pop); scroll-margin-top: calc(var(--header-h) + 24px); }
+.md .project:first-child { margin-top: 0; }
+.md .project > h2:first-child { margin-top: 0; }
+.md .project > :last-child { margin-bottom: 0; }
 .md .project__head p { margin: 0; }
 .md .project__title { margin: 4px 0 8px; font-size: 1.5rem; }
 .md .project__lead { color: var(--ink-2); }

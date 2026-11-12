@@ -385,6 +385,41 @@
       .catch(() => { /* z. B. lokal per Doppelklick geöffnet: Platzhaltertext bleibt stehen */ });
   }
 
+  /* Bild vergrössern (img[data-zoom]): Klick öffnet, weiterer Klick oder Esc schliesst */
+  function initImageZoom() {
+    const imgs = document.querySelectorAll("img[data-zoom]");
+    if (!imgs.length) return;
+    const dlg = document.createElement("dialog");
+    dlg.className = "img-zoom";
+    dlg.setAttribute("aria-label", "Vergrössertes Bild – zum Schliessen klicken");
+    const big = document.createElement("img");
+    dlg.appendChild(big);
+    document.body.appendChild(dlg);
+    const supports = typeof dlg.showModal === "function";
+
+    const open = (img) => {
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      if (supports) dlg.showModal(); else dlg.setAttribute("open", "");
+      root.classList.add("modal-open");
+    };
+    const close = () => {
+      if (supports) dlg.close(); else { dlg.removeAttribute("open"); root.classList.remove("modal-open"); }
+    };
+    dlg.addEventListener("click", close);
+    dlg.addEventListener("close", () => root.classList.remove("modal-open"));
+
+    imgs.forEach((img) => {
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("role", "button");
+      img.setAttribute("aria-label", "Bild vergrössern: " + img.alt);
+      img.addEventListener("click", () => open(img));
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(img); }
+      });
+    });
+  }
+
   /* Jahr im Footer --------------------------------------------------------- */
   function initYear() {
     document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
@@ -398,5 +433,6 @@
   initCountdown();
   initEventModal();
   initEventFeed();
+  initImageZoom();
   initYear();
 })();
