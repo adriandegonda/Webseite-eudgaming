@@ -760,6 +760,14 @@ img[data-zoom] { cursor: zoom-in; }
 .md .project:first-child { margin-top: 0; }
 .md .project > h2:first-child { margin-top: 0; }
 .md .project > :last-child { margin-bottom: 0; }
+/* Einklappbare Karte: Titel als Schalter */
+.md .project--collapse > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; }
+.md .project--collapse > summary::-webkit-details-marker { display: none; }
+.md .project--collapse > summary h2 { margin: 0; }
+.md .project--collapse > summary::after { content: "▾"; flex: none; display: grid; place-items: center; width: 36px; height: 36px; border: 2px solid var(--ink); border-radius: 50%; font-size: 1.1rem; color: var(--ink); transition: transform .2s; }
+.md .project--collapse:not([open]) > summary::after { transform: rotate(-90deg); }
+.md .project--collapse > summary:hover::after { background: var(--ink); color: var(--paper); }
+.md .project--collapse[open] > summary { margin-bottom: 1em; }
 .md .project__head p { margin: 0; }
 .md .project__title { margin: 4px 0 8px; font-size: 1.5rem; }
 .md .project__lead { color: var(--ink-2); }
