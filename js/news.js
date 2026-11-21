@@ -8,6 +8,15 @@
 
   const NEWS = [
     {
+      id: "2026-11-james-studie-2026",
+      date: "2026-11-21",
+      title: "JAMES-Studie 2026: Gamen bleibt beliebt",
+      text: "Die [JAMES-Studie 2026](https://www.zhaw.ch/storage/psychologie/forschung/JAMES/JAMES-Studie_2026_DE.pdf) der ZHAW zeigt die neusten Erkenntnisse zur Mediennutzung der 12- bis 19-Jährigen in der Schweiz. 80 % der Jugendlichen gamen mindestens ab und zu – gleich viele wie 2024. Spannend: Grand Theft Auto ist zum ersten Mal seit zehn Jahren nicht mehr in den Top 5 der Lieblingsgames (neu Platz 6). Die Autor:innen vermuten, dass die Gamingwelt auf GTA VI wartet. Ebenfalls spannend: Mit Minecraft, Fortnite und Roblox sind drei der fünf Lieblingsgames Spiele, in denen Jugendliche selbst bauen und eigene Welten, Inseln oder sogar ganze Spiele erstellen können. Wie viele Jugendliche den Schritt weiter ins eigentliche Game Design machen, wurde leider nicht erhoben – das wäre eine spannende Frage für die nächste Studie.",
+      links: [
+        { label: "Zur Studie (PDF)", href: "https://www.zhaw.ch/storage/psychologie/forschung/JAMES/JAMES-Studie_2026_DE.pdf" }
+      ]
+    },
+    {
       id: "2026-11-dizh-ludic-culture-hub",
       date: "2026-11-11",
       title: "DIZH-Strukturcall: Ludic Culture Hub",
